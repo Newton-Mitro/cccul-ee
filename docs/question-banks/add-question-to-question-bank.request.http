@@ -1,0 +1,37 @@
+
+### Get Authenticated User Request
+# @name authUser
+POST   http://localhost:8000/api/question-banks
+Content-Type: application/json
+Accept: application/json
+
+{
+  "id": 1,
+  "question_text": "My Question",
+  "question_section_id": 1,
+  "correct_option_id": 1,
+  "correct_option_text": "Option One",
+  "active": true,
+  "question_options": [
+    {
+        "id": 1,
+        "question_bank_id": 1,
+        "option_text": "Option One"
+    },
+    {
+        "id": 2,
+        "question_bank_id": 1,
+        "option_text": "Option Two"
+    },
+    {
+        "id": 3,
+        "question_bank_id": 1,
+        "option_text": "Option Three"
+    },
+    {
+        "id": 4,
+        "question_bank_id": 1,
+        "option_text": "Option Four"
+    }
+  ]
+}
