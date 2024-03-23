@@ -18,8 +18,10 @@ Route::get('active_exam', [ExamController::class, 'activeExam'])->name('exams.ac
 Route::ApiResource('answer-sheets', AnswerSheetController::class);
 
 Route::ApiResource('question-banks', QuestionBankController::class);
+Route::get('question-banks/section/{section_id}/{limit}', [QuestionBankController::class, 'getQuestionsBySection'])->name('question-banks.getQuestionsBySection');
 
 Route::ApiResource('question-sections', QuestionSectionController::class);
 
 Route::ApiResource('employee-exams', EmployeeExamController::class);
+Route::get('employee-exams/count/{employee_code}/{exam_id}', [EmployeeExamController::class, 'currentExamCount'])->name('employee-exams.currentExamCount');
 

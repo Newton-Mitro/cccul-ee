@@ -8,5 +8,5 @@ Accept: application/json
 {
   "exam_title": "First Exam",
   "max_exam_can_take": 2,
-  "active": true
+  "active": false
 }

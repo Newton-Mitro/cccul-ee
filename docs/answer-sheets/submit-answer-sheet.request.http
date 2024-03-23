@@ -6,10 +6,11 @@ Content-Type: application/json
 Accept: application/json
 
 {
-  "emp_code_exam_id_exam_num": "1180_1_1",
+  "employee_exam_id": 1,
+  "emp_code_exam_id_exam_num": "1180_1_2",
   "exam_id": 1,
   "employee_code": "1180",
-  "exam_num": 1,
+  "exam_num": 2,
   "total_questions": 10,
   "correct_answers": 1,
   "wrong_answers": 9,

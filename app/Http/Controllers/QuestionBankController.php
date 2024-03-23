@@ -12,8 +12,7 @@ class QuestionBankController extends Controller
 {
     public function index()
     {
-        // return QuestionBank::with('questionOptions')->get();
-        return QuestionBank::all();
+        return QuestionBank::with('questionOptions')->get();
     }
 
     public function store(StoreQuestionBankRequest $request)
@@ -28,6 +27,11 @@ class QuestionBankController extends Controller
         $questionBank->active = $request->active;
         $questionBank->save();
         return $questionBank;
+    }
+
+    public function getQuestionsBySection($question_section_id, $limit)
+    {
+        return QuestionBank::where('question_section_id',$question_section_id)->with('questionOptions')->inRandomOrder()->limit($limit)->get();
     }
 
     public function show(QuestionBank $questionBank)

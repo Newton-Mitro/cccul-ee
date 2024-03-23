@@ -16,7 +16,8 @@ class ExamController extends Controller
 
     public function activeExam()
     {
-        $exam =  Exam::where('active', true)->first();
+        $exam =  Exam::where('active', true)->get()->firstOrFail();
+
         return  $exam;
     }
 

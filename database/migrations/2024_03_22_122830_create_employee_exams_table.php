@@ -13,7 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employee_exams', function (Blueprint $table) {
-            $table->id();
+            $table->integer('id')->unsigned();
             $table->string('emp_code_exam_id_exam_num')->unique();
             $table->string('employee_code');
             // $table->foreignId('exam_id');
@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('correct_answers')->default(0);
             $table->integer('wrong_answers')->default(0);
             $table->timestamps();
+            $table->primary('id');
         });
     }
 
