@@ -19,7 +19,7 @@ class EmployeeExamController extends Controller
 
     public function show($employeeCode)
     {
-        $empExam =  EmployeeExam::where('employee_code', $employeeCode)->get()->firstOrFail();
+        $empExam =  EmployeeExam::where('employee_code', $employeeCode)->get();
         return  $empExam;
     }
 
