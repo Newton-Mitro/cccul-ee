@@ -13,11 +13,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('question_options', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
+            $table->id();
             $table->string('option_text');
             $table->foreignIdFor(QuestionBank::class);
+            $table->boolean('is_correct')->default(false);
             $table->timestamps();
-            $table->primary('id');
         });
     }
 

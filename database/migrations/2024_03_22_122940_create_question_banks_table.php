@@ -14,12 +14,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('question_banks', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
+            $table->id();
             $table->string('question_text');
-            // $table->foreignId('question_section_id');
             $table->foreignIdFor(QuestionSection::class);
-            $table->unsignedInteger('correct_option_id');
-            $table->string('correct_option_text');
             $table->boolean('active')->default(false);
             $table->timestamps();
             $table->primary('id');
