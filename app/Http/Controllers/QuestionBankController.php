@@ -18,14 +18,14 @@ class QuestionBankController extends Controller
     public function store(StoreQuestionBankRequest $request)
     {
 
-        $questionOption = QuestionOption::insert($request->question_options);
+
         $questionBank = new QuestionBank();
         $questionBank->question_text = $request->question_text;
         $questionBank->question_section_id = $request->question_section_id;
-        $questionBank->correct_option_id = $request->correct_option_id;
-        $questionBank->correct_option_text = $request->correct_option_text;
         $questionBank->active = $request->active;
         $questionBank->save();
+
+        $questionOption = QuestionOption::insert($request->question_options);
         return $questionBank;
     }
 
