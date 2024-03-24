@@ -20,13 +20,15 @@ class QuestionBankController extends Controller
 
 
         $questionBank = new QuestionBank();
+        $questionBank->id = $request->id;
         $questionBank->question_text = $request->question_text;
         $questionBank->question_section_id = $request->question_section_id;
         $questionBank->active = $request->active;
         $questionBank->save();
 
         $questionOption = QuestionOption::insert($request->question_options);
-        return $questionBank;
+
+        return QuestionBank::find($request->id)->with('questionOptions')->get();
     }
 
     public function getQuestionsBySection($question_section_id, $limit)

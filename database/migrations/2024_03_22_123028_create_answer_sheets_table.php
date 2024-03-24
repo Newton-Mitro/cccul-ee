@@ -18,9 +18,7 @@ return new class extends Migration
         Schema::create('answer_sheets', function (Blueprint $table) {
             $table->id();
             $table->string('employee_code');
-            // $table->foreignId('employee_exam_id');
             $table->foreignIdFor(EmployeeExam::class);
-            // $table->foreignId('exam_id');
             $table->foreignIdFor(Exam::class);
             $table->foreignIdFor(QuestionBank::class);
             $table->foreignIdFor(QuestionOption::class);

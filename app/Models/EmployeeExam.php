@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Exam;
 use App\Models\AnswerSheet;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class EmployeeExam extends Model
 {

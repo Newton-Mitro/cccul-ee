@@ -14,12 +14,11 @@ return new class extends Migration
     {
         Schema::create('employee_exams', function (Blueprint $table) {
             $table->id();
-            $table->string('employee_exam_id');
             $table->string('emp_code_exam_id_exam_num')->unique();
             $table->string('employee_code');
-            // $table->foreignId('exam_id');
             $table->foreignIdFor(Exam::class);
             $table->integer('exam_num')->default(1);
+            $table->string('name')->nullable();
             $table->integer('total_questions')->default(0);
             $table->integer('correct_answers')->default(0);
             $table->integer('wrong_answers')->default(0);

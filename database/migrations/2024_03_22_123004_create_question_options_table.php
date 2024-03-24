@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignIdFor(QuestionBank::class);
             $table->boolean('is_correct')->default(false);
             $table->timestamps();
+            $table->primary('id');
         });
     }
 
