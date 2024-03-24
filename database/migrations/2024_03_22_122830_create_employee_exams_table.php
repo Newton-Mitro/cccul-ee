@@ -13,7 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('employee_exams', function (Blueprint $table) {
-            $table->integer('id')->unsigned();
+            $table->id();
+            $table->string('employee_exam_id');
             $table->string('emp_code_exam_id_exam_num')->unique();
             $table->string('employee_code');
             // $table->foreignId('exam_id');

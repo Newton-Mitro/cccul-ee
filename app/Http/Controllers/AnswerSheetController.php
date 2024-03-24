@@ -17,8 +17,8 @@ class AnswerSheetController extends Controller
 
     public function store(StoreAnswerSheetRequest $request)
     {
-        $answerSheet = AnswerSheet::insert($request->submitted_answers);
         $employeeExam = new EmployeeExam();
+        $employeeExam->employee_exam_id = $request->employee_exam_id;
         $employeeExam->emp_code_exam_id_exam_num = $request->emp_code_exam_id_exam_num;
         $employeeExam->exam_id = $request->exam_id;
         $employeeExam->employee_code = $request->employee_code;
@@ -27,6 +27,8 @@ class AnswerSheetController extends Controller
         $employeeExam->correct_answers = $request->correct_answers;
         $employeeExam->wrong_answers = $request->wrong_answers;
         $employeeExam->save();
+        $answerSheet = AnswerSheet::insert($request->submitted_answers);
+
         return $employeeExam;
     }
 }
