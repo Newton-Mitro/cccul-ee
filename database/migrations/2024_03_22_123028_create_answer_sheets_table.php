@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Models\EmployeeExam;
 use App\Models\Exam;
 use App\Models\QuestionOption;
+use App\Models\QuestionBank;
 
 return new class extends Migration
 {
@@ -21,11 +22,10 @@ return new class extends Migration
             $table->foreignIdFor(EmployeeExam::class);
             // $table->foreignId('exam_id');
             $table->foreignIdFor(Exam::class);
-            $table->string('question_text')->nullable();
-            $table->string('selected_option_text')->nullable();
+            $table->foreignIdFor(QuestionBank::class);
             $table->foreignIdFor(QuestionOption::class);
-            $table->string('correct_option_text');
-            $table->boolean('is_correct_answer')->default(false);
+            $table->string('option_text');
+            $table->boolean('is_correct')->default(false);
             $table->timestamps();
         });
     }

@@ -19,11 +19,10 @@ Accept: application/json
       "employee_code": "1180",
       "employee_exam_id": 1,
       "exam_id": 1,
-      "question_text": "My Question Text",
-      "selected_option_text": "Selected Option Text",
       "question_option_id": 1,
-      "correct_option_text": "Option 1",
-      "is_correct_answer": true
+      "question_option_id": 1,
+      "option_text": "Option 1",
+      "is_correct": true
     }
   ]
 }
