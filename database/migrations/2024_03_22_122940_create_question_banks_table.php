@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreignIdFor(QuestionSection::class);
             $table->boolean('active')->default(false);
             $table->timestamps();
-            $table->primary('id');
         });
     }
 
