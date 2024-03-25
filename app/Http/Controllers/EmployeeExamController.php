@@ -10,6 +10,11 @@ use App\Http\Requests\UpdateEmployeeExamRequest;
 
 class EmployeeExamController extends Controller
 {
+    public function index()
+    {
+        $empExam =  EmployeeExam::all();
+        return  $empExam;
+    }
 
     public function currentExamCount($employeeCode, $currentExamId)
     {
