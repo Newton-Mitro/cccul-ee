@@ -30,6 +30,6 @@ class AnswerSheetController extends Controller
         $employeeExam->save();
         $answerSheet = AnswerSheet::insert($request->submitted_answers);
 
-        return EmployeeExam::find($request->id)->with('answerSheets')->get()->firstOrFail();
+        return $employeeExam;
     }
 }
